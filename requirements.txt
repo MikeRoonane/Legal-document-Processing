@@ -1,0 +1,12 @@
+numpy
+scikit-learn
+jupyter
+ipykernel
+datasets
+polars
+transformers
+torch
+accelerate>=0.26.0
+fastapi
+uvicorn
+pydantic

@@ -1,0 +1,36 @@
+{
+	"name": "Existing Dockerfile",
+	"build": {
+		"context": "..",
+		"dockerfile": "../docker/Dockerfile"
+	},
+	"runArgs": ["--gpus", "all"],
+	
+	"hostRequirements": {
+		"gpu":true
+	},
+	"mounts": [
+  		"source=C:/Users/miker/.cache/huggingface,destination=/root/.cache/huggingface,type=bind"
+	],
+	
+	// "containerEnv": {
+  	// "CUDA_VISIBLE_DEVICES": "0"
+	// },
+	"remoteUser": "root",
+	"postCreateCommand": "pip install --upgrade pip && pip install -r requirements.txt"
+	,
+
+	"customizations": {
+		"vscode" : {
+			"settings": {
+				"terminal.integrated.defaultProfile.linux": "bash"
+
+			},
+			"extensions": [
+				"ms-toolsai.jupyter-keymap",
+				"ms-toolsai.jupyter",
+        		"ms-python.python"
+			]
+		}
+	}
+}
